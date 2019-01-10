@@ -37,7 +37,7 @@ This is a basic reverse shell with custom commands all coded in Python 3. This i
 * Make a keylogger or mouselogger
 * Remove directories
 * Delete the functionality of <kbd>^C<kbd> 
-### Long-term goals:
+#### Long-term goals:
 * Change desktop background
 * A way to find password hash
 * Create a way to maintain connection
