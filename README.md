@@ -24,8 +24,10 @@ __This project requires Python 3.__ This is a basic reverse shell with custom co
 1. ```cd ReverseShell```
 2. Find ```client.py``` file in downloaded directory
 3. Go to line 26 and replace the default connect back address with what you want
-4. Go to line 47 and replace the port with what you want.
+4. Go to line 47 and replace the port with what you want
 5. Save file
+6. ```python3 server.py```
+7. Now send the client.py to your client
 
 ## Upcoming Features :white_check_mark::
 #### Short-term goals:
