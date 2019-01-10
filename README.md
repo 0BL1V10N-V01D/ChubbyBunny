@@ -38,7 +38,7 @@ __This project requires Python 3.__ This is a basic reverse shell with custom co
 * Lock mouse
 * Make a keylogger or mouselogger
 * Remove directories
-* Delete the functionality of <kbd>^C<kbd> 
+* Delete the functionality of <kbd>^C
 #### Long-term goals:
 * Change desktop background
 * A way to find password hash
