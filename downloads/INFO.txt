@@ -1,0 +1,3 @@
+*** DO NOT DELETE THIS FOLDER ***
+
+This is the folder where you will find all the loot you download from the target machine.
