@@ -4,7 +4,7 @@
 <img align="left" width="120" height="120" src="https://image.flaticon.com/icons/svg/1149/1149168.svg">
 
 
-This is a basic reverse shell with custom commands all coded in Python 3. This is a PROTOTYPE ONLY. There are still many bugs. **Using this professionaly is not recommended**. The list of upcoming features are bugs are listed down below. Feel free to report any more bugs you find or any features you would think be cool to add.
+__This project requires Python 3.__ This is a basic reverse shell with custom commands all coded in Python 3. This is a PROTOTYPE ONLY. There are still many bugs. **Using this professionaly is not recommended**. The list of upcoming features are bugs are listed down below. Feel free to report any more bugs you find or any features you would think be cool to add.
 
 ## Linux operating systems I recommend :cd::
 - Kali Linux 2
