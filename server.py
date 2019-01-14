@@ -11,7 +11,7 @@ import readline
 import pickle
 import struct
 import base64
-from io import StringIO, BytesIO 
+from io import StringIO, BytesIO
 import base64
 from PIL import Image
 import datetime
@@ -47,7 +47,7 @@ def socketCreate():
         global s
         try:
             # ASK FOR AND SET NETWORK INTERFACE
-            netI = input(GREEN + '\n[*] Input you prefered network interface. (Press enter for wlan0): ' + END)
+            netI = input(GREEN + '[*] Input you prefered network interface. (Press enter for wlan0): ' + END)
             if netI == '':
                 netI = 'wlan0'
             print(GREEN + '[*] Using network interaces ' + END + CYAN + netI + END)
@@ -220,7 +220,7 @@ def sendCommands(conn):
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
             print('\n' + clientResponse, end="")
-        
+
 
 def main():
     signal.signal(signal.SIGINT, signal_handler)
