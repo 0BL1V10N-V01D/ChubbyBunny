@@ -45,26 +45,37 @@ def socketCreate():
         global port
         global showPort
         global s
-        # ASK FOR AND SET NETWORK INTERFACE
-        netI = input(GREEN + '\n[*] Input you prefered network interface. (Press enter for wlan0): ' + END)
-        if netI == '':
-            netI = 'wlan0'
-        print(GREEN + '[*] Using network interaces ' + END + CYAN + netI + END)
-        # ASK FOR AND SET IP ADDRESS
-        ni.ifaddresses(netI)
-        ip = ni.ifaddresses(netI)[ni.AF_INET][0]['addr']
-        host = input(GREEN + 'Choose connect bask address (Press enter for ' + ip + '): ')
-        if host == '':
-            host = ip
-        print(GREEN + '[*] Using IP ' + END + CYAN + host + END)
-        # ASK FOR AND SET PORT
-        port = input(GREEN + '[*] Input the connect back port (Press enter for 4444): ' + END)
-        if port == '':
-            port = '4444'
-        print(GREEN + '[*] Using port ' + END + CYAN + port + END)
-        port = int(port)
-
-        showPort = str(port)
+        try:
+            # ASK FOR AND SET NETWORK INTERFACE
+            netI = input(GREEN + '\n[*] Input you prefered network interface. (Press enter for wlan0): ' + END)
+            if netI == '':
+                netI = 'wlan0'
+            print(GREEN + '[*] Using network interaces ' + END + CYAN + netI + END)
+        except:
+            print(RED + '[!] Incorrect network interface!' + END + '\n')
+            socketCreate()
+        try:
+            # ASK FOR AND SET IP ADDRESS
+            ni.ifaddresses(netI)
+            ip = ni.ifaddresses(netI)[ni.AF_INET][0]['addr']
+            host = input(GREEN + 'Choose connect bask address (Press enter for ' + ip + '): ')
+            if host == '':
+                host = ip
+            print(GREEN + '[*] Using IP ' + END + CYAN + host + END)
+        except:
+            print(RED + '[!] There was an error getting the IP address. Try checking your network interface. Restarting...' + END + '\n')
+            socketCreate()
+        try:
+           # ASK FOR AND SET PORT
+           port = input(GREEN + '[*] Input the connect back port (Press enter for 4444): ' + END)
+           if port == '':
+               port = '4444'
+           print(GREEN + '[*] Using port ' + END + CYAN + port + END)
+           port = int(port)
+           showPort = str(port)
+        except:
+            print(RED + '[!] There was an unknown error creating to port! Restarting...' + END + '\n')
+            socketCreate()
 
         print(createS)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
