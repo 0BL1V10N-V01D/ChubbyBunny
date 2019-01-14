@@ -52,18 +52,18 @@ def socketCreate():
                 netI = 'wlan0'
             print(GREEN + '[*] Using network interaces ' + END + CYAN + netI + END)
         except:
-            print(RED + '[!] Incorrect network interface!' + END + '\n')
+            print(RED + '[!] Incorrect network interface!' + END)
             socketCreate()
         try:
             # ASK FOR AND SET IP ADDRESS
             ni.ifaddresses(netI)
             ip = ni.ifaddresses(netI)[ni.AF_INET][0]['addr']
-            host = input(GREEN + 'Choose connect bask address (Press enter for ' + ip + '): ')
+            host = input(GREEN + '[*] Choose connect bask address (Press enter for ' + ip + '): ' + END)
             if host == '':
                 host = ip
             print(GREEN + '[*] Using IP ' + END + CYAN + host + END)
         except:
-            print(RED + '[!] There was an error getting the IP address. Try checking your network interface. Restarting...' + END + '\n')
+            print(RED + '[!] There was an error getting the IP address. Try checking your network interface.' + END)
             socketCreate()
         try:
            # ASK FOR AND SET PORT
@@ -74,7 +74,7 @@ def socketCreate():
            port = int(port)
            showPort = str(port)
         except:
-            print(RED + '[!] There was an unknown error creating to port! Restarting...' + END + '\n')
+            print(RED + '[!] There was an unknown error creating to port!' + END)
             socketCreate()
 
         print(createS)
