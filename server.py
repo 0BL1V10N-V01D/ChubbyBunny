@@ -32,6 +32,9 @@ restartTerminal = (YELLOW + '[!] Sometimes restarting the terminal may help... '
 bindS = (GREEN + '[*] Binding socket to port...' + END)
 failed = (RED + '[!] Failed!' + END)
 
+def invisiblePass():
+    socketCreate()
+
 def signal_handler(sig, frame):
     print(RED + '\n\nQuitting...\n' + END)
     sys.exit(0)
@@ -53,7 +56,8 @@ def socketCreate():
             print(GREEN + '[*] Using network interaces ' + END + CYAN + netI + END)
         except:
             print(RED + '[!] Incorrect network interface!' + END)
-            os.exec*(.)
+            invisiblePass()
+            
         try:
             # ASK FOR AND SET IP ADDRESS
             ni.ifaddresses(netI)
@@ -64,7 +68,7 @@ def socketCreate():
             print(GREEN + '[*] Using IP ' + END + CYAN + host + END)
         except:
             print(RED + '[!] There was an error getting the IP address. Try checking your network interface.' + END)
-            os.exec*(.)
+            invisiblePass()
         try:
            # ASK FOR AND SET PORT
            port = input(GREEN + '[*] Input the connect back port (Press enter for 4444): ' + END)
@@ -75,7 +79,7 @@ def socketCreate():
            showPort = str(port)
         except:
             print(RED + '[!] There was an unknown error creating to port!' + END)
-            os.exec*(.)
+            invisiblePass()
 
         print(createS)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
