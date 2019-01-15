@@ -1,5 +1,8 @@
 # A Basic Reverse Shell for Python 3
-#### Will be updated soon!
+## BIG UPDATE VERY SOON
+
+[![Version](https://img.shields.io/badge/ChubbyBunny-1.0.0-brightgreen.svg)]()
+[![Stage](https://img.shields.io/badge/Release-Unstable-orange.svg)]()
 
 <img align="left" width="120" height="120" src="https://image.flaticon.com/icons/svg/1149/1149168.svg">
 
