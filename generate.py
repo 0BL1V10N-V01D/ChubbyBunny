@@ -44,7 +44,8 @@ def createFile():
         sys.exit()
 
 def encodedFile():
-    print(GREEN + BOLD + 'Encoding file once...')
+    global copiedFile
+    print(GREEN + BOLD + 'Encoding file...')
     time.sleep(1)
     with open(copiedFile, 'rb') as file:
         for line in file:
@@ -57,8 +58,11 @@ def encodedFile():
         file.write(replaceEncoded)
     file.close()
 
-    print(GREEN + BOLD + 'Encoding file twice...')
-    encoded2 = encoded.
+def pythonToExe():
+    subprocess.call(['python3', 'setup.py'])
+
+def done():
+    print(GREEN + BOLD + '\nDone! Saved to output folder')
 
 def main():
     createFile()
