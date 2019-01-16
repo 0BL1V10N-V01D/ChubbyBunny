@@ -53,7 +53,8 @@ def startOptionMenu():
     print(END + BOLD + '     [' + GREEN + BOLD + '1' + END + BOLD + ']' + GREEN + BOLD + '  Create Backdoor With Chubby Bunny')
     print(END + BOLD + '     [' + GREEN + BOLD + '2' + END + BOLD + ']' + GREEN + BOLD + '  Start Chubby Bunny Listener')
     print(END + BOLD + '     [' + GREEN + BOLD + '3' + END + BOLD + ']' + GREEN + BOLD + '  Help')
-    print(END + BOLD + '     [' + GREEN + BOLD + '4' + END + BOLD + ']' + GREEN + BOLD + '  Exit')
+    print(END + BOLD + '     [' + GREEN + BOLD + '4' + END + BOLD + ']' + GREEN + BOLD + '  Credits')
+    print(END + BOLD + '     [' + GREEN + BOLD + '5' + END + BOLD + ']' + GREEN + BOLD + '  Exit')
     print('             ')
     startCMD()
 
@@ -75,6 +76,20 @@ def startCMD():
             startOptionMenu()
             pass
         elif cmd == '4':
+            subprocess.call(['clear'])
+            print(RED + '==========================================================')
+            print(END + BOLD + '                         Credits:                         ')
+            print(RED + '==========================================================')
+            print(END + BOLD + '\nSpecial Thanks To:')
+            print(RED + BOLD + '\nOffensive Security')
+            print(VIOLET + BOLD + '\nhttps://www.offensive-security.com/')
+            print(YELLOW + BOLD + "\nhttps://www.kali.org/")
+            print(RED + BOLD + "\nhttps://github.com")
+            back = input(GREEN + BOLD + '\n\nPress [ENTER] to return to menu' + END)
+            if back == '':
+                subprocess.call(['clear'])
+                startOptionMenu()
+        elif cmd == '5':
             subprocess.call(['clear'])
             print(RED + BOLD + '[-] Trying to exit...\n')
             time.sleep(1)
