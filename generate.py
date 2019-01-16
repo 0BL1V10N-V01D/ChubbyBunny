@@ -46,12 +46,13 @@ def createFile():
 
 def encodedFile():
     print(GREEN + BOLD + 'Encoding file...')
-    with open(copiedFile, "rb") as file:
-        bencoded = base64.b64encode(file.read())
-        encoded = str(bencoded)
+    with open(copiedFile, 'rb') as file:
+        for line in file:
+            bencoded = base64.b64encode(file.read())
+            encoded = str(bencoded)
     file.close()
     with open(copiedFile, "w+") as file:
-        replaceEncoded = str("import base64,sys;exec(base64.b64decode({2:str,3:lambda b:bytes(b,'UTF-8')}[sys.version_info[0]]\n" + '("' + encoded + '")')
+        replaceEncoded = str("import base64,sys;exec(base64.b64decode(" + encoded + "))")
         file.truncate(0)
         file.write(replaceEncoded)
     file.close()
