@@ -23,7 +23,7 @@ def socketCreate():
     global host
     global port
     global s
-    host = '192.168.1.25'
+    host = ''
     port = 4444
     s = socket.socket()
 
