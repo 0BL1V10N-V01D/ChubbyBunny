@@ -8,7 +8,7 @@
 This is a very very early beta of the ChubbyBunny Framework. ChubbyBunny is an easy tool used to generate a backdoor. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection.
 
 ## Screenshot
-<img src="https://i.ibb.co/cLGSrFk/Screenshot-from-2019-01-15-19-57-00.png" width="100%">
+<img src="https://i.ibb.co/cLGSrFk/Screenshot-from-2019-01-15-19-57-00.png" width="85%">
 </img>
 
 ## How to Install :arrow_down::
@@ -19,6 +19,7 @@ This is a very very early beta of the ChubbyBunny Framework. ChubbyBunny is an e
 
 ## How to Use :question::
 1. ```cd ChubbyBunny```
+3. ```python3 chubbyBunny.py```
 2. Type ```1``` to generate file. Go through steps
 3. Launch listner by running the command ```2```. Follow the steps.
 4. Send payload to victim.
