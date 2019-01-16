@@ -24,7 +24,7 @@ def socketCreate():
     global port
     global s
     host = ''
-    port = 4444
+    port = 
     s = socket.socket()
 
 def socketConnect():
