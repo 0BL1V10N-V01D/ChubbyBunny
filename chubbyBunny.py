@@ -99,7 +99,7 @@ def startCMD():
             subprocess.call(['clear'])
             startOptionMenu()
             pass
-
+        
 def main():
     signal.signal(signal.SIGINT, signal_handler)
     subprocess.call(['clear'])
