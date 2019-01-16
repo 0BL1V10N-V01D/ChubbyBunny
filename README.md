@@ -12,19 +12,19 @@ __This project requires Python 3.__ This is a basic reverse shell with custom co
 ## Linux operating systems I recommend :cd::
 - Kali Linux 2
 - Cyborg
-- Parrot 
-- BackTrack 
-- Backbox 
+- Parrot
+- BackTrack
+- Backbox
 - Devuan
 
 ## How to Install :arrow_down::
 #### Please use Linux for server and Windows x86 for client
-1. ```git clone https://github.com/0BL1V10N-V01D/ReverseShell.git```
-2. ```cd ReverseShell```
+1. ```git clone https://github.com/0BL1V10N-V01D/ChubbyBunny.git```
+2. ```cd ChubbyBunny```
 3. ```pip install -r requirements.txt```
 
 ## How to Use :question::
-1. ```cd ReverseShell```
+1. ```cd ChubbyBunny```
 2. Find ```client.py``` file in downloaded directory
 3. Go to line 26 and replace the default connect back address with what you want
 4. Go to line 47 and replace the port with what you want
