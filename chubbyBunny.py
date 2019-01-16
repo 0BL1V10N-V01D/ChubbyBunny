@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 import readline
 import time
 import signal
@@ -38,7 +39,7 @@ def printBanner():
     print('         )-."" .-(         ')
     print('         //^\` `/^\\        ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']   Backdoor Creator For Remote Access    [' + GREEN + BOLD + '--' + END + BOLD + ']')
     print(GREEN + BOLD + '        //  |   |  \\       ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']' + VIOLET + BOLD + '        Created by:' + RED + ' 0BL1V10N V01D        ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']')
-    print(GREEN + BOLD + '      ,/_| ' + END + BOLD + '0' + GREEN + BOLD + '| _ | ' + END + BOLD + '0' + GREEN + BOLD + '|_\,    ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']' + VIOLET + BOLD + '            Version:' + RED + ' BETA' + END + BOLD + '               [' + GREEN + BOLD + '--' + END + BOLD + ']')
+    print(GREEN + BOLD + '      ,/_| ' + END + BOLD + '0' + GREEN + BOLD + '| _ | ' + END + BOLD + '0' + GREEN + BOLD + '|_\,    ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']' + VIOLET + BOLD + '              Version:' + RED + ' BETA' + END + BOLD + '              [' + GREEN + BOLD + '--' + END + BOLD + ']')
     print(GREEN + BOLD + '    /`    `"=.v.="`    `\\  ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']' + VIOLET + BOLD + '   Follow me on Github:' + RED + BOLD + ' @0BL1V10N-V01D' + END + BOLD + '   [' + GREEN + BOLD + '--' + END + BOLD + ']')
     print(GREEN + BOLD + '   /`    _."{_,_}"._    `\\ ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']' + VIOLET + BOLD + '      Follow me on Twitter:' + RED + ' @0V01d' + END + BOLD + '       [' + GREEN + BOLD + '--' + END + BOLD + ']')
     print(GREEN + BOLD + '  `/`  ` \  |||  / `  `\`  ' + END + BOLD + '[' + GREEN + BOLD + '--' + END + BOLD + ']                                         [' + GREEN + BOLD + '--' + END + BOLD + ']')
@@ -60,7 +61,7 @@ def startOptionMenu():
 
 def startCMD():
     while True:
-        cmd = input(GREEN + BOLD + '[' + RED + 'ChubbyBunny' + GREEN + BOLD + ']--[' + RED + BOLD + '-' + GREEN + BOLD + ']-[' + YELLOW + 'menu' + GREEN + BOLD + ']: ')
+        cmd = input(GREEN + BOLD + ' ┌─[' + RED + 'ChubbyBunny' + GREEN + BOLD + ']--[' + RED + BOLD + '-' + GREEN + BOLD + ']-[' + YELLOW + 'menu' + GREEN + BOLD + ']:\n' + ' └─────► ')
         if cmd == '1':
             subprocess.call(['python3', 'generate.py'])
         elif cmd == '2':
@@ -99,9 +100,13 @@ def startCMD():
             subprocess.call(['clear'])
             startOptionMenu()
             pass
-        
+
 def main():
     signal.signal(signal.SIGINT, signal_handler)
+
+    os.environ['LINES'] = "25"
+    os.environ['COLUMNS'] = "80"
+
     subprocess.call(['clear'])
     startOptionMenu()
 
