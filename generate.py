@@ -14,7 +14,6 @@ BOLD = '\33[1m'
 #print(GREEN + BOLD + "\nThis isn't set up yet! Very soon... Please use the 'client.py' with the github instructions instead.\n" + END)
 print('         ')
 print('         ')
-print('         ')
 
 host = input(GREEN + BOLD + 'Set LHOST IP: ' + END)
 port = input(GREEN + BOLD + 'Set LPORT: ' + END)
