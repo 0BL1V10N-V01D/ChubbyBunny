@@ -9,8 +9,8 @@
 ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
 ## Screenshots
-<img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="450" heigt="450">
-<img align="right" src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="450" heigt="450">
+<img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
+<img align="right" src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="430" heigt="430">
 
 ## How to Install :arrow_down::
 #### Please use Linux for server and Windows x86 for client
