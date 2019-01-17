@@ -74,7 +74,11 @@ def pythonToExe():
 
 def done():
     time.sleep(2)
-    print(GREEN + BOLD + '\nDone! Saved to the dist directory in the output folder!')
+    print(GREEN + BOLD + "\nDone! Saved to the 'dist' directory in the output folder!")
+    enter = input(GREEN + BOLD + 'Press enter to continue...')
+    if enter == '':
+        sys.exit()
+        subprocess.call(['python3 chubbybunny.py'])
     time.sleep(2)
 
 def main():
@@ -82,7 +86,6 @@ def main():
     encodedFile()
     pythonToExe()
     done()
-
 
 if __name__ == "__main__":
     main()
