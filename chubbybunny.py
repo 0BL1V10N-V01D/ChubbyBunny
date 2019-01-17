@@ -64,6 +64,10 @@ def startCMD():
         cmd = input(GREEN + BOLD + ' ┌─[' + RED + 'ChubbyBunny' + GREEN + BOLD + ']--[' + RED + BOLD + '-' + GREEN + BOLD + ']-[' + YELLOW + 'menu' + GREEN + BOLD + ']:\n' + ' └─────► ')
         if cmd == '1':
             subprocess.call(['python3', 'generate.py'])
+            enterToContinue = input(GREEN + BOLD + '\nPress [ENTER] to return to menu' + END)
+            if enterToContinue = '':
+                subprocess.call(['clear'])
+                startOptionMenu()
         elif cmd == '2':
             subprocess.call(['python3', 'server.py'])
         elif cmd == '3':
@@ -71,7 +75,7 @@ def startCMD():
                 url = 'https://github.com/0BL1V10N-V01D/ChubbyBunny/blob/master/README.md'
                 webbrowser.open_new(url)
             except:
-                print(RED + BOLD + "\n[-] Couldn't open help page. Go to https://github.com/0BL1V10N-V01D/ChubbyBunny/blob/master/README.md instead\n")
+                print(RED + BOLD + "\nCouldn't open help page. Go to https://github.com/0BL1V10N-V01D/ChubbyBunny/blob/master/README.md instead\n")
                 time.sleep(5)
             subprocess.call(['clear'])
             startOptionMenu()
