@@ -8,10 +8,6 @@
 
 ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
-## Screenshots
-<img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
-<img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="397" heigt="397">
-
 ## How to Install :arrow_down::
 #### Please use Linux for server and Windows x86 for client
 1. ```git clone https://github.com/0BL1V10N-V01D/ChubbyBunny.git```
@@ -24,6 +20,10 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 2. Type ```1``` to generate file. Go through steps
 3. Launch listner by running the command ```2```. Follow the steps.
 4. Send payload to victim.
+
+## Screenshots
+<img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
+<img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="397" heigt="397">
 
 ## Linux operating systems I recommend :cd::
 - Kali Linux 2
