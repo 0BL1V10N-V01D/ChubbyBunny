@@ -1,4 +1,4 @@
-# THIS LINE SHOULD BE EMPTY
+# THIS LINE SHOULD BE EMPTY. *** DO NOT DELETE THIS FILE ***
 
 import os
 import sys
