@@ -1,5 +1,4 @@
 # ChubbyBunny Framework
-## BIG UPDATE VERY SOON
 
 [![Version](https://img.shields.io/badge/ChubbyBunny-1.0.0-brightgreen.svg)]()
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
