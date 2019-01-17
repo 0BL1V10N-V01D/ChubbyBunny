@@ -64,8 +64,8 @@ def startCMD():
         cmd = input(GREEN + BOLD + ' ┌─[' + RED + 'ChubbyBunny' + GREEN + BOLD + ']--[' + RED + BOLD + '-' + GREEN + BOLD + ']-[' + YELLOW + 'menu' + GREEN + BOLD + ']:\n' + ' └─────► ')
         if cmd == '1':
             subprocess.call(['python3', 'generate.py'])
-            enterToContinue = input(GREEN + BOLD + '\nPress [ENTER] to return to menu' + END)
-            if enterToContinue = '':
+            enterToContinue = input(GREEN + BOLD + '\n\nPress [ENTER] to return to menu' + END)
+            if enterToContinue == '':
                 subprocess.call(['clear'])
                 startOptionMenu()
         elif cmd == '2':

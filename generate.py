@@ -60,12 +60,14 @@ def encodedFile():
             file.truncate(0)
             file.write(replaceEncoded)
         file.close()
+        secondFile()
     except:
         print(RED + BOLD + "Couldn't encode python file. Quitting...")
         sys.exit()
 
 def pythonToExe():
     try:
+        print(GREEN + BOLD + '\nGenerating exe file...\n')
         p = subprocess.Popen(['pyinstaller', '--onefile', '--windowed', '--uac-uiaccess', copiedFile], cwd = 'output/')
         p.wait()
     except:
@@ -75,10 +77,6 @@ def pythonToExe():
 def done():
     time.sleep(2)
     print(GREEN + BOLD + "\nDone! Saved to the 'dist' directory in the output folder!")
-    enter = input(GREEN + BOLD + 'Press enter to continue...')
-    if enter == '':
-        sys.exit()
-        subprocess.call(['python3 chubbybunny.py'])
     time.sleep(2)
 
 def main():
