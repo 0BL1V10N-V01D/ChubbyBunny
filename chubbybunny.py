@@ -104,9 +104,6 @@ def startCMD():
 def main():
     signal.signal(signal.SIGINT, signal_handler)
 
-    os.environ['LINES'] = "25"
-    os.environ['COLUMNS'] = "80"
-
     subprocess.call(['clear'])
     startOptionMenu()
 
