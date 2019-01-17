@@ -10,7 +10,7 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 
 ## Screenshots
 <img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
-<img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="430" heigt="400">
+<img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="400" heigt="400">
 
 ## How to Install :arrow_down::
 #### Please use Linux for server and Windows x86 for client
