@@ -7,7 +7,7 @@
 
 <img align="left" width="90" height="90"  src="https://image.flaticon.com/icons/svg/347/347479.svg">
 
-__This project requires Python 3.__ This is a basic reverse shell with custom commands all coded in Python 3. This is a PROTOTYPE ONLY. There are still many bugs. **Using this professionaly is not recommended**. The list of upcoming features are bugs are listed down below. Feel free to report any more bugs you find or any features you would think be cool to add.
+ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
 ## Linux operating systems I recommend :cd::
 - Kali Linux 2
