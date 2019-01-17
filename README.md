@@ -9,14 +9,6 @@
 
 ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
-## Linux operating systems I recommend :cd::
-- Kali Linux 2
-- Cyborg
-- Parrot
-- BackTrack
-- Backbox
-- Devuan
-
 ## How to Install :arrow_down::
 #### Please use Linux for server and Windows x86 for client
 1. ```git clone https://github.com/0BL1V10N-V01D/ChubbyBunny.git```
@@ -25,12 +17,18 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 
 ## How to Use :question::
 1. ```cd ChubbyBunny```
-2. Find ```client.py``` file in downloaded directory
-3. Go to line 26 and replace the default connect back address with what you want
-4. Go to line 47 and replace the port with what you want
-5. Save file
-6. ```python3 server.py```
-7. Now send the client.py to your client
+3. ```python3 chubbybunny.py```
+2. Type ```1``` to generate file. Go through steps
+3. Launch listner by running the command ```2```. Follow the steps.
+4. Send payload to victim.
+
+## Linux operating systems I recommend :cd::
+- Kali Linux 2
+- Cyborg
+- Parrot
+- BackTrack
+- Backbox
+- Devuan
 
 ## Upcoming Features :white_check_mark::
 #### Short-term goals:
