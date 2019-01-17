@@ -45,25 +45,6 @@ def createFile():
         print(RED + BOLD + "Couldn't create python file. Quitting...")
         sys.exit()
 
-def encodedFile():
-    try:
-        global copiedFile
-        print(GREEN + BOLD + '\nEncoding file...\n')
-        time.sleep(2)
-        with open(copiedFile, 'rb') as file:
-            for line in file:
-                bencoded = base64.b64encode(file.read())
-                encoded = str(bencoded)
-        file.close()
-        with open(copiedFile, "w+") as file:
-            replaceEncoded = str("import base64,sys;exec(base64.b64decode(" + encoded + "))")
-            file.truncate(0)
-            file.write(replaceEncoded)
-        file.close()
-    except:
-        print(RED + BOLD + "Couldn't encode python file. Quitting...")
-        sys.exit()
-
 def pythonToExe():
     try:
         print(GREEN + BOLD + '\nGenerating exe file...\n')
@@ -80,7 +61,6 @@ def done():
 
 def main():
     createFile()
-    encodedFile()
     pythonToExe()
     done()
 
