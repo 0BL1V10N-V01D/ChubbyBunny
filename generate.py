@@ -60,7 +60,6 @@ def encodedFile():
             file.truncate(0)
             file.write(replaceEncoded)
         file.close()
-        secondFile()
     except:
         print(RED + BOLD + "Couldn't encode python file. Quitting...")
         sys.exit()

