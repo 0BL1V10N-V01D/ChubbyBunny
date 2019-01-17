@@ -61,12 +61,16 @@ def encodedFile():
             file.write(replaceEncoded)
         file.close()
     except:
-        print(RED + BOLD + "Couldn't create python file. Quitting...")
+        print(RED + BOLD + "Couldn't encode python file. Quitting...")
         sys.exit()
 
 def pythonToExe():
-    p = subprocess.Popen(['pyinstaller', '--onefile', '--windowed', '--uac-uiaccess', copiedFile], cwd = 'output/')
-    p.wait()
+    try:
+        p = subprocess.Popen(['pyinstaller', '--onefile', '--windowed', '--uac-uiaccess', copiedFile], cwd = 'output/')
+        p.wait()
+    except:
+        print(RED + BOLD + "Couldn't create exe file. Quitting...")
+        sys.exit()
 
 def done():
     time.sleep(2)
