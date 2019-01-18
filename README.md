@@ -24,6 +24,8 @@
 
 <img align="left" width="90" height="90"  src="https://image.flaticon.com/icons/svg/347/347479.svg">
 
+## Description:
+
 ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
 ## Features :key::
@@ -56,13 +58,8 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 <img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
 <img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="397" heigt="397">
 
-## Linux operating systems I recommend :cd::
-- Kali Linux 2
-- Cyborg
-- Parrot
-- BackTrack
-- Backbox
-- Devuan
+## Tested On
+[![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
 
 ## Upcoming Features :white_check_mark::
 #### Short-term goals:
@@ -80,6 +77,9 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 * Create a way to take a picture through the camera and send it
 * Stream a live feed of the camera to an http server
 * Create a way to maintain connection
+
+## Contact
+:email: **0BL1V10NV01D@protonmail.com**
 
 ## Bugs :beetle::
 * Inproper socket exit on both machines
