@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  :books: This project was created only for learning purpose.
+  :books: This project was created only for learning purposes. We are not responsible for any damage that this causes.
 </p>
 
 ## Description:
