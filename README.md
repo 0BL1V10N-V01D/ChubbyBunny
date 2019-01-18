@@ -1,5 +1,9 @@
 <h1 align="center">ChubbyBunny Framework</h1>
 <p align="center">
+  <img src="https://i.imgur.com/uBFu6eS.png">
+<p>
+
+<p align="center">
   <a href="https://www.python.org/">
     <img src="https://img.shields.io/badge/Python-3.7.2-brightgreen.svg">
   </a>
