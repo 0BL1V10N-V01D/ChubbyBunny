@@ -22,8 +22,6 @@
   :books: This project was created only for learning purpose.
 </p>
 
-<img align="left" width="90" height="90"  src="https://image.flaticon.com/icons/svg/347/347479.svg">
-
 ## Description:
 
 ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
