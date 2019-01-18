@@ -44,13 +44,10 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 - [ ] Lock keyboard and mouse
 
 ## How to Install :arrow_down::
-#### Please use Linux for server and Windows x86 for client
+__Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
 1. ```git clone https://github.com/0BL1V10N-V01D/ChubbyBunny.git```
 2. ```cd ChubbyBunny```
 3. ```pip install -r requirements.txt```
-
-## Tested On
-[![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
 
 ## How to Use :question::
 1. ```cd ChubbyBunny```
