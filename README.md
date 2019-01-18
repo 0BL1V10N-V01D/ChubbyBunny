@@ -1,8 +1,17 @@
 <h1 align="center">ChubbyBunny Framework</h1>
 <p align="center">
-[![Version](https://img.shields.io/badge/ChubbyBunny-1.0.0-brightgreen.svg)]()
-[![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
-[![Build](https://img.shields.io/badge/Supported_OS-Linux-orange.svg)]()
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.7.2-brightgreen.svg">
+  </a>
+  <a href="https://github.com/0BL1V10N-V01D/ChubbyBunny/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg">
+  </a>
+  <a href="https://github.com/0BL1V10N-V01D/ChubbyBunny">
+    <img src="https://img.shields.io/badge/Release-1.0.0-red.svg">
+  </a>
+    <a href="https://opensource.org">
+    <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
+  </a>
 </p>
 
 <img align="left" width="90" height="90"  src="https://image.flaticon.com/icons/svg/347/347479.svg">
