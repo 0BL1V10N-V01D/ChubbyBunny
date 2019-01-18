@@ -49,6 +49,9 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 2. ```cd ChubbyBunny```
 3. ```pip install -r requirements.txt```
 
+## Tested On
+[![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
+
 ## How to Use :question::
 1. ```cd ChubbyBunny```
 3. ```python3 chubbybunny.py```
@@ -60,9 +63,6 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 ## Screenshots
 <img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
 <img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="397" heigt="397">
-
-## Tested On
-[![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
 
 ## Upcoming Features :white_check_mark::
 #### Short-term goals:
