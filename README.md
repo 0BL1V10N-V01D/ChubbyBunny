@@ -48,7 +48,7 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 1. ```cd ChubbyBunny```
 3. ```python3 chubbybunny.py```
 2. Type ```1``` to generate file. Go through steps
-3. Launch listner by running the command ```2```. Follow the steps.
+3. Launch listener by running the command ```2```. Follow the steps.
 4. Send payload to victim.
 5. Type ```help``` for help
 
