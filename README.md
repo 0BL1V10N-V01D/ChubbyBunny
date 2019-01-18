@@ -1,8 +1,9 @@
-# ChubbyBunny Framework
-
+<h1 align="center">ChubbyBunny Framework</h1>
+<p align="center">
 [![Version](https://img.shields.io/badge/ChubbyBunny-1.0.0-brightgreen.svg)]()
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
 [![Build](https://img.shields.io/badge/Supported_OS-Linux-orange.svg)]()
+</p>
 
 <img align="left" width="90" height="90"  src="https://image.flaticon.com/icons/svg/347/347479.svg">
 
