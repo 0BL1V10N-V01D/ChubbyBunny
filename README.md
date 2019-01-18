@@ -1,7 +1,8 @@
-<h1 align="center">ChubbyBunny Framework</h1>
 <p align="center">
   <img src="https://i.imgur.com/uBFu6eS.png">
 <p>
+
+<h1 align="center">ChubbyBunny Payload Generator</h1>
 
 <p align="center">
   <a href="https://www.python.org/">
