@@ -33,6 +33,14 @@ def signal_handler(sig, frame):
     print(RED + BOLD + '\n\nQuitting...\n' + END)
     sys.exit(0)
 
+def printBanner():
+    print('_________ .__         ___.  ___.          .____    .__          __                              ')
+    print("\_   ___ \|  |__  __ _\_ |__\_ |__ ___.__.|    |   |__| _______/  |_  ____   ____   ___________ ")
+    print("/    \  \/|  |  \|  |  \ __ \| __ <   |  ||    |   |  |/  ___/\   __\/ __ \ /    \_/ __ \_  __ \\")
+    print('\     \___|   Y  \  |  / \_\ \ \_\ \___  ||    |___|  |\___ \  |  | \  ___/|   |  \  ___/|  | \/')
+    print(' \______  /___|  /____/|___  /___  / ____||_______ \__/____  > |__|  \___  >___|  /\___  >__|   ')
+    print('        \/     \/          \/    \/\/             \/       \/            \/     \/     \/       ')
+
 def socketCreate():
     try:
         global host
@@ -192,6 +200,7 @@ def sendCommands(conn):
 def main():
     signal.signal(signal.SIGINT, signal_handler)
 
+    printBanner()
     socketCreate()
     socketBind()
     listening()
