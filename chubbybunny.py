@@ -70,6 +70,10 @@ def startCMD():
                 startOptionMenu()
         elif cmd == '2':
             subprocess.call(['python3', 'server.py'])
+            enterToContinue = input(GREEN + BOLD + '\n\nPress [ENTER] to return to menu' + END)
+            if enterToContinue == '':
+                subprocess.call(['clear'])
+                startOptionMenu()
         elif cmd == '3':
             try:
                 url = 'https://github.com/0BL1V10N-V01D/ChubbyBunny/blob/master/README.md'
