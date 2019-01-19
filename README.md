@@ -1,4 +1,9 @@
-<h1 align="center">ChubbyBunny Framework</h1>
+<p align="center">
+  <img src="https://i.imgur.com/uBFu6eS.png">
+<p>
+
+<h1 align="center">ChubbyBunny Payload Generator</h1>
+
 <p align="center">
   <a href="https://www.python.org/">
     <img src="https://img.shields.io/badge/Python-3.7.2-brightgreen.svg">
@@ -19,19 +24,19 @@
 </p>
 
 <p align="center">
-  :books: This project was created only for learning purpose.
+  :books: This project was created only for learning purposes. We are not responsible for any damage that this causes.
 </p>
 
 ## Description:
 
-ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool a malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to bypass most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
+ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool creates malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to __bypass__ most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
 ## Features :key::
 - [x] View cleint's system information
 - [x] Take screenshots of victim's computer
 - [x] Download text files
- -[x] Open a URL on victim's PC
- -[x] View total amount of memory
+- [x] Open a URL on victim's PC
+- [x] View total amount of memory
 - [x] Crash vistim's PC
 - [x] Lock victim's computer screen
 - [x] Shutdowm or restart victim's computer
@@ -39,7 +44,7 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 - [ ] Lock keyboard and mouse
 
 ## How to Install :arrow_down::
-#### Please use Linux for server and Windows x86 for client
+__Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
 1. ```git clone https://github.com/0BL1V10N-V01D/ChubbyBunny.git```
 2. ```cd ChubbyBunny```
 3. ```pip install -r requirements.txt```
@@ -55,9 +60,6 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 ## Screenshots
 <img align="left" src="https://i.postimg.cc/bJ3vtSTd/Screenshot-from-2019-01-16-19-36-22.png" width="430" heigt="430">
 <img src="https://i.postimg.cc/kGJfTzKf/Screenshot-from-2019-01-16-19-41-31.png" width="397" heigt="397">
-
-## Tested On
-[![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - Rolling Edition**
 
 ## Upcoming Features :white_check_mark::
 #### Short-term goals:
