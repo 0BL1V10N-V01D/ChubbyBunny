@@ -77,8 +77,8 @@ __Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.k
 * Stream a live feed of the camera to an http server
 * Create a way to maintain connection
 
-## Contact
-:email: **0BL1V10NV01D@protonmail.com**
+## Contact :email::
+**0BL1V10NV01D@protonmail.com**
 
 ## Bugs :beetle::
 * Inproper socket exit on both machines
