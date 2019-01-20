@@ -21,6 +21,8 @@ GREEN = '\33[32m'
 RED = '\33[31m'
 YELLOW = '\33[33m'
 CYAN = '\033[1;36m'
+VIOLET = '\33[35m'
+BLUE = '\33[34m'
 END = '\33[0m'
 BOLD = '\33[1m'
 CURL = '\33[4m'
@@ -34,12 +36,27 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 def printBanner():
-    print('_________ .__         ___.  ___.          .____    .__          __                              ')
-    print("\_   ___ \|  |__  __ _\_ |__\_ |__ ___.__.|    |   |__| _______/  |_  ____   ____   ___________ ")
-    print("/    \  \/|  |  \|  |  \ __ \| __ <   |  ||    |   |  |/  ___/\   __\/ __ \ /    \_/ __ \_  __ \\")
-    print('\     \___|   Y  \  |  / \_\ \ \_\ \___  ||    |___|  |\___ \  |  | \  ___/|   |  \  ___/|  | \/')
-    print(' \______  /___|  /____/|___  /___  / ____||_______ \__/____  > |__|  \___  >___|  /\___  >__|   ')
-    print('        \/     \/          \/    \/\/             \/       \/            \/     \/     \/       ')
+    print(BLUE + BOLD + '                    ____     ____')
+    print("                  /'    |   |    \\")
+    print('                /    /  |   | \   \\')
+    print('              /    / |  |   |  \   \\')
+    print('             (   /   |  """"   |\   \ ' + END + BOLD + '   Ahhh HA!!!')
+    print(BLUE + BOLD + '             | /   / /^\    /^\  \  _| ' + END + BOLD + '       I love big big carrot!!!')
+    print(BLUE + BOLD + '              ~   | |   |  |   | | ~')
+    print('                  | |__' + END + BOLD + 'O' + BLUE + BOLD + '|__|' + END + BOLD + 'O' + BLUE + BOLD + '__| |')
+    print('                /~~      \/     ~~\\')
+    print('               /   (      |      )  \\')
+    print("         _--_  /,   \____/^\___/'   \  _--_")
+    print('       /~    ~\ / -____-|_|_|-____-\ /~    ~\\')
+    print('     /________|___/~~~~\___/~~~~\ __|________\\')
+    print('--~~~          ^ |     |   |     |  -     :  ~~~~~:~-_     ___-----~~~~~~~~|')
+    print("   /             `^-^-^'   `^-^-^'                  :  ~\ /'   ____/--------|")
+    print(' ;                                    :              :    |----------/--------|')
+    print(':          ,   ' + VIOLET + BOLD + 'ChubbyListener:' + RED + BOLD + ' v1.0.0' + BLUE + BOLD + '             ;    .  |---\\--------------|')
+    print(' :     -      ' + VIOLET + BOLD + 'Writen by:' + RED + BOLD + ' 0BL1V10N V01D' + BLUE + BOLD + ' .              : : |______________-__|')
+    print("  :              ,                 ,                :   /'~----___________|")
+    print('__  \\\        ^                          ,, ;; ;; ;._-~')
+    print('  ~~~-----____________________________________----~~~')
 
 def socketCreate():
     try:
@@ -48,8 +65,8 @@ def socketCreate():
         global showPort
         global s
 
-        host = input(GREEN + BOLD + 'Set LHOST IP: ' + END)
-        port = input('\n' + GREEN + BOLD + 'SET LPORT: ' + END)
+        host = input(GREEN + BOLD + '\nSet LHOST: ' + END)
+        port = input('\n' + GREEN + BOLD + 'Set LPORT: ' + END)
 
         port = int(port)
         showPort = str(port)
