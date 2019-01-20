@@ -70,7 +70,6 @@ __Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.k
 * Upload txt files
 * Record microphone
 * Remove directories
-* Delete the functionality of <kbd>^C
 #### Long-term goals:
 * Change desktop background
 * A way to find password hash
@@ -83,5 +82,4 @@ __Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.k
 
 ## Bugs :beetle::
 * Inproper socket exit on both machines
-* The actual shell part of the code doest't work (it's very glitchy)
 * __Submit any issues that you find__
