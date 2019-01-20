@@ -68,10 +68,16 @@ def startCMD():
             if enterToContinue == '':
                 subprocess.call(['clear'])
                 startOptionMenu()
+            else:
+                subprocess.call(['clear'])
+                startOptionMenu()
         elif cmd == '2':
             subprocess.call(['python3', 'server.py'])
             enterToContinue = input(GREEN + BOLD + '\n\nPress [ENTER] to return to menu' + END)
             if enterToContinue == '':
+                subprocess.call(['clear'])
+                startOptionMenu()
+            else:
                 subprocess.call(['clear'])
                 startOptionMenu()
         elif cmd == '3':
@@ -95,7 +101,10 @@ def startCMD():
             print(YELLOW + BOLD + "\nhttps://www.kali.org/")
             print(RED + BOLD + "\nhttps://github.com")
             back = input(GREEN + BOLD + '\n\nPress [ENTER] to return to menu' + END)
-            if back == '':
+            if enterToContinue == '':
+                subprocess.call(['clear'])
+                startOptionMenu()
+            else:
                 subprocess.call(['clear'])
                 startOptionMenu()
         elif cmd == '5':
