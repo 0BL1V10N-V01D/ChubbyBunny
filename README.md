@@ -3,7 +3,7 @@
 <p>
 
 <h1 align="center">ChubbyBunny Payload Generator</h1>
-<h1 align="center">(Project is on hold for now)</h1>
+<h1 align="center">(###Project is on hold for now###)</h1>
 
 <p align="center">
   <a href="https://www.python.org/">
