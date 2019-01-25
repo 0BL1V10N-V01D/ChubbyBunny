@@ -2,8 +2,10 @@
   <img src="https://i.imgur.com/uBFu6eS.png">
 <p>
 
-<h1 align="center">ChubbyBunny Payload Generator</h1>
-<h1 align="center">(###Project is on hold for now###)</h1>
+<p align="center">
+  <h1 align="center">ChubbyBunny Payload Generator</h1>
+  ### Project is on hold for now ###
+<p>
 
 <p align="center">
   <a href="https://www.python.org/">
