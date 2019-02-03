@@ -43,6 +43,7 @@ ChubbyBunny is an easy tool used to generate a backdoor for remote access to a W
 - [x] Crash victim's PC
 - [x] Lock victim's computer screen
 - [x] Shutdowm or restart victim's computer
+- [x] Retrieve chrome passwords
 - [ ] Upload text files
 - [ ] Lock keyboard and mouse
 
