@@ -47,8 +47,9 @@ def createFile():
 
 def pythonToExe():
     try:
+        ico = input('\n' + GREEN + BOLD + 'Path to icon file:')
         print(GREEN + BOLD + '\nGenerating exe file...\n')
-        p = subprocess.Popen(['pyinstaller', '--onefile', '--windowed', '--uac-uiaccess', copiedFile], cwd = 'output/')
+        p = subprocess.Popen(['pyinstaller', '-y', '-F', 'w', 'i', ico, '-n', name, copiedFile], cwd = 'output/')
         p.wait()
     except:
         print(RED + BOLD + "Couldn't create exe file. Quitting...")
