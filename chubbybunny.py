@@ -101,7 +101,7 @@ def startCMD():
             print(YELLOW + BOLD + "\nhttps://www.kali.org/")
             print(RED + BOLD + "\nhttps://github.com")
             back = input(GREEN + BOLD + '\n\nPress [ENTER] to return to menu' + END)
-            if enterToContinue == '':
+            if back == '':
                 subprocess.call(['clear'])
                 startOptionMenu()
             else:
