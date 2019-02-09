@@ -55,10 +55,10 @@ __Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.k
 
 ## How to Use :question::
 1. ```cd ChubbyBunny```
-3. ```python3 chubbybunny.py```
+3. ```python chubbybunny.py```
 2. Type ```1``` to generate file. Go through steps
 3. Launch listener by running the command ```2```. Follow the steps.
-4. Send payload to victim.
+4. Send generated payload to victim.
 5. Type ```help``` for help
 
 ## Screenshots
