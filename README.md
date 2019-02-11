@@ -16,10 +16,6 @@
   </a>
     <a href="https://opensource.org">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
-  </a>
-  <a href ="https://github.com/0BL1V10N-V01D/ChubbyBunny">
-    <img src ="https://img.shields.io/badge/Status-On%20Hold-red.svg">
-  </a>
 </p>
 
 <p align="center">
