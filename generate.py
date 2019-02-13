@@ -12,12 +12,6 @@ RED = '\33[31m'
 END = '\33[0m'
 BOLD = '\33[1m'
 
-try:
-    import PyInstaller
-except ImportError as e:
-    print(RED + BOLD + "Please install PyInstaller with 'pip install pyinstaller'")
-    sys.exit(1)
-
 #print(GREEN + BOLD + "\nThis isn't set up yet! Very soon... Please use the 'client.py' with the github instructions instead.\n" + END)
 
 print('                     ')
