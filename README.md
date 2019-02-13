@@ -85,5 +85,5 @@ __Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.k
 **0BL1V10NV01D@protonmail.com**
 
 ## Bugs :beetle::
-* Inproper socket exit on both machines
+* Generate error with pyinstaller
 * __Submit any issues that you find__
