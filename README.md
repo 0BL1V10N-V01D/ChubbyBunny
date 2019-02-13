@@ -16,6 +16,7 @@
   </a>
     <a href="https://opensource.org">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
+  </a>
 </p>
 
 <p align="center">
