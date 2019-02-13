@@ -14,7 +14,7 @@ BOLD = '\33[1m'
 
 try:
     import PyInstaller
-except ImportError, e:
+except ImportError as e:
     print(RED + BOLD + "Please install PyInstaller with 'pip install pyinstaller'")
     sys.exit(1)
 
