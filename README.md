@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  Chubby Bunny allow you to generate payloads and control someone's Windows computer remotley.
+  Chubby Bunny allow you to generate payloads and control someone's Windows computer remotley. ##BID UPDATE COMING SOON##
 </p>
 
 <p align="center">
