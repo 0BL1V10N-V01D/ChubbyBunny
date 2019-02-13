@@ -48,6 +48,7 @@ __Tested On:__ [![Kali)](https://www.google.com/s2/favicons?domain=https://www.k
 1. ```git clone https://github.com/0BL1V10N-V01D/ChubbyBunny.git```
 2. ```cd ChubbyBunny```
 3. ```pip install -r requirements.txt```
+**This generator requires PyInstaller to work!**
 
 ## How to Use :question::
 1. ```cd ChubbyBunny```
