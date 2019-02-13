@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3.7.2-brightgreen.svg">
+    <img src="https://img.shields.io/badge/Python-3.7.0-brightgreen.svg">
   </a>
   <a href="https://github.com/0BL1V10N-V01D/ChubbyBunny/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg">
