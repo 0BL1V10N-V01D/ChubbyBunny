@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  Chubby Bunny allow you to generate payloads and control someone's Windows computer remotley. ##BID UPDATE COMING SOON##
+  Chubby Bunny allow you to generate payloads and control someone's Windows computer remotley.
 </p>
 
 <p align="center">
@@ -29,7 +29,7 @@
 
 ## Description:
 
-ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool creates malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to __bypass__ most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
+ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool creates malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to __bypass__ most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs. #BIG UPDATE COMING SOON#
 
 ## Features :key::
 - [x] View cleint's system information
