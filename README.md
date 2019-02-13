@@ -1,4 +1,5 @@
-## UPDATE COMING SOON ##
+<h1 align="center">UPDATE COMING SOON</h1>
+
 <p align="center">
   <img src="https://i.imgur.com/uBFu6eS.png">
 <p>
