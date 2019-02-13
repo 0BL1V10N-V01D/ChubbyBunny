@@ -1,3 +1,4 @@
+## UPDATE COMING SOON ##
 <p align="center">
   <img src="https://i.imgur.com/uBFu6eS.png">
 <p>
@@ -29,7 +30,7 @@
 
 ## Description:
 
-ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool creates malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to __bypass__ most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs. #BIG UPDATE COMING SOON#
+ChubbyBunny is an easy tool used to generate a backdoor for remote access to a Windows machine. This tool creates malware with custom coded payloads that can be then easily executed on a Windows machine. The malware that is created with this tool has a high ability to __bypass__ most present-day antivirus detection. This project is still a __work in progress__ so there is a high chance of multiple bugs.
 
 ## Features :key::
 - [x] View cleint's system information
