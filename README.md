@@ -1,4 +1,5 @@
-<h1 align="center">PROJECT IS BEING UPDATED AND MOVED</h1>
+<h1 align="center">PROJECT DISCONTINUED. MOVED TO:</h1>
+<h1 align="center">https://github.com/kyryloren/cheesyrat</h1>
 
 <p align="center">
   <img src="https://i.imgur.com/uBFu6eS.png">
