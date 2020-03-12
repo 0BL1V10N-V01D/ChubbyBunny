@@ -1,7 +1,7 @@
 autopy==1.1.1
 netifaces==0.10.7
 Pillow==5.4.1
-psutil==5.4.8
+psutil==5.6.6
 PyInstaller==3.4
 pypiwin32==223
 urllib3==1.24.1
