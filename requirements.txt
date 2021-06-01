@@ -4,4 +4,4 @@ Pillow==5.4.1
 psutil==5.4.8
 PyInstaller==3.4
 pypiwin32==223
-urllib3==1.24.1
+urllib3==1.26.5
